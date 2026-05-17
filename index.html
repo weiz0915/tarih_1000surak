@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#111118">
 
-<title>Для Жанёки ❤️</title>
+<title>11.11 ❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
@@ -17,28 +20,39 @@
     box-sizing:border-box;
 }
 
-body{
-    font-family:'Montserrat',sans-serif;
-    background:
-    linear-gradient(135deg,#ffdde1 0%,#ee9ca7 100%);
-    min-height:100vh;
-    overflow-x:hidden;
-    color:white;
-    position:relative;
+html{
+    scroll-behavior:smooth;
 }
 
-/* animated background */
+body{
+    font-family:'Montserrat',sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+    color:#fff;
+
+    background:
+    radial-gradient(circle at top left,#ff4f87 0%,transparent 25%),
+    radial-gradient(circle at bottom right,#ff8fb1 0%,transparent 25%),
+    linear-gradient(135deg,#0f0f14 0%,#191923 40%,#111118 100%);
+
+    background-attachment:fixed;
+}
+
+/* animated glow */
 
 body::before{
     content:'';
     position:fixed;
-    width:200%;
-    height:200%;
+    inset:0;
+
     background:
-    radial-gradient(circle at 20% 20%,rgba(255,255,255,0.25),transparent 25%),
-    radial-gradient(circle at 80% 30%,rgba(255,255,255,0.15),transparent 25%),
-    radial-gradient(circle at 50% 80%,rgba(255,255,255,0.2),transparent 25%);
-    animation:bgMove 20s linear infinite;
+    radial-gradient(circle at 20% 20%,rgba(255,105,180,0.18),transparent 30%),
+    radial-gradient(circle at 80% 30%,rgba(255,255,255,0.06),transparent 30%),
+    radial-gradient(circle at 50% 80%,rgba(255,20,147,0.12),transparent 35%);
+
+    animation:bgMove 18s linear infinite;
+
     z-index:-2;
 }
 
@@ -47,7 +61,7 @@ body::before{
         transform:translate(0,0) rotate(0deg);
     }
     100%{
-        transform:translate(-10%,-10%) rotate(360deg);
+        transform:translate(-5%,-5%) rotate(360deg);
     }
 }
 
@@ -59,42 +73,45 @@ body::before{
     height:100%;
     overflow:hidden;
     z-index:-1;
+    pointer-events:none;
 }
 
 .hearts span{
     position:absolute;
     display:block;
-    color:rgba(255,255,255,0.3);
-    animation:float 15s linear infinite;
-    bottom:-150px;
-    font-size:20px;
+    color:rgba(255,255,255,0.10);
+    bottom:-100px;
+    animation:float 16s linear infinite;
+    font-size:22px;
 }
 
 .hearts span:nth-child(1){
     left:10%;
     animation-duration:12s;
-    font-size:22px;
 }
+
 .hearts span:nth-child(2){
     left:25%;
-    animation-duration:17s;
+    animation-duration:18s;
 }
+
 .hearts span:nth-child(3){
     left:40%;
     animation-duration:14s;
-    font-size:28px;
 }
+
 .hearts span:nth-child(4){
-    left:55%;
+    left:58%;
     animation-duration:20s;
 }
+
 .hearts span:nth-child(5){
-    left:70%;
-    animation-duration:16s;
-    font-size:26px;
+    left:75%;
+    animation-duration:15s;
 }
+
 .hearts span:nth-child(6){
-    left:85%;
+    left:90%;
     animation-duration:13s;
 }
 
@@ -103,9 +120,11 @@ body::before{
         transform:translateY(0) rotate(0deg);
         opacity:0;
     }
+
     10%{
         opacity:1;
     }
+
     100%{
         transform:translateY(-120vh) rotate(360deg);
         opacity:0;
@@ -114,62 +133,115 @@ body::before{
 
 .container{
     width:100%;
-    max-width:900px;
+    max-width:920px;
     margin:auto;
     padding:40px 20px 80px;
 }
 
+/* title */
+
 .title{
     text-align:center;
-    margin-top:40px;
-    margin-bottom:40px;
-    animation:fadeIn 2s ease;
+    margin-top:30px;
+    margin-bottom:35px;
+
+    animation:fadeIn 1.5s ease;
 }
 
 .title h1{
     font-family:'Great Vibes',cursive;
-    font-size:70px;
+    font-size:84px;
     font-weight:400;
-    text-shadow:0 0 20px rgba(255,255,255,0.4);
+
+    color:#fff;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.3),
+    0 0 30px rgba(255,105,180,0.5);
 }
 
-.title p{
-    margin-top:10px;
-    font-size:18px;
-    opacity:0.9;
-}
+/* premium card */
 
 .card{
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.2);
-    border-radius:30px;
-    padding:35px;
-    box-shadow:0 8px 32px rgba(0,0,0,0.15);
-    animation:slideUp 1.5s ease;
+    position:relative;
+
+    background:rgba(20,20,28,0.72);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:32px;
+
+    padding:38px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.45),
+    0 0 30px rgba(255,105,180,0.08);
+
+    animation:slideUp 1.3s ease;
+
+    /* safari support */
+
+    -webkit-backdrop-filter:blur(20px);
+    backdrop-filter:blur(20px);
 }
 
-.text{
-    font-size:18px;
-    line-height:2;
-    white-space:pre-line;
-    font-weight:400;
-    color:#fff;
+/* glossy effect */
+
+.card::before{
+    content:'';
+
+    position:absolute;
+    inset:0;
+
+    border-radius:32px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,0.10),
+        transparent 30%
+    );
+
+    pointer-events:none;
 }
+
+/* text */
+
+.text{
+    position:relative;
+    z-index:2;
+
+    color:#f5f5f7;
+
+    font-size:18px;
+    line-height:2.05;
+
+    font-weight:400;
+
+    white-space:pre-line;
+
+    text-shadow:0 0 1px rgba(0,0,0,0.3);
+}
+
+/* footer */
 
 .footer{
     text-align:center;
-    margin-top:35px;
-    font-size:15px;
-    opacity:0.8;
+    margin-top:24px;
+
+    color:rgba(255,255,255,0.65);
+
+    font-size:14px;
 }
+
+/* animations */
 
 @keyframes fadeIn{
     from{
         opacity:0;
         transform:translateY(-20px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -181,33 +253,44 @@ body::before{
         opacity:0;
         transform:translateY(40px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
 }
 
-/* iphone optimization */
+/* mobile */
 
 @media(max-width:768px){
 
+    .container{
+        padding:24px 16px 60px;
+    }
+
+    .title{
+        margin-top:10px;
+        margin-bottom:28px;
+    }
+
     .title h1{
-        font-size:52px;
+        font-size:62px;
     }
 
     .card{
-        padding:25px;
-        border-radius:24px;
+        padding:24px;
+        border-radius:26px;
     }
 
     .text{
-        font-size:16px;
-        line-height:1.9;
+        font-size:15.8px;
+        line-height:1.95;
     }
 }
 
 </style>
 </head>
+
 <body>
 
 <div class="hearts">
@@ -226,17 +309,19 @@ body::before{
     </div>
 
     <div class="card">
+
         <div class="text">
 Жанёка, саган айткым келген туралы узак ойланып кеш болсада коп нарсены угып барынша шынайы айткым келеды. Сен менын омырыме жай гана кырып келген адам емес, журегымдегы оте ерекше орын алган жансын. Арамыздагы болганын бары бос нарсе емес керысынше оте манызды болды. Негызынде мен ойламадым быреуге басым катты кетеды деп, брак осы 10сыныпта сен мены вальска билеуге шакырган саттен бастап бары озгерды. Кейын сен мены унататынынды былген кезымде, ышымде ерекше быр нарсе оянгандай болды. Сенын адемы даусыннан, ерке кулкыннен,оте адемы сулулыгыннан мен озым де байкамай саган карай жакындай бердым. Бырге журген кездеремызде мен озымды баскаша сезынгенмын, ерекше жане шынайы сезындым. Карапайым кундердын озы сен барда ерекше кундер болатын. Мындаган кыздар арасынан мен сены кайтадан тандар едым.
 
 Блем озым не был идеальным, коп кателестым, кейде артык кетып журдым, талай нарсены дурыс емес ойлаганмын, кейбыр кезде ундемей калып айтатынымды айта алмадым. Может ты щас злишься на меня или думаешь что я вру тебе, это совсем не так и знай мен жасаган кате арекеттерыме оправдание айтып жатканым емес барын оз басыма мойындаймын, брак быр нарсены шын айткым келеды, мен ешкашан сены адейы ренжытып жане сезымдерынмен ойнагым келмеды. Менын саган чувстваларым уакытша немесе отырык болган емес ардайым шынайы болган. Казр мен саган адейы кышкене болсын ренжытып немесе жамандык жасагым келмейды. Сены кайтаргым келгены ойын алде качелялар ушын емес. Я изменился во многом и коп нарсе уктым. Осы отношения тек адемы создер жане бос уаде берып журу ушын емес ал керысынше честность, забота, уважение и умение быть рядом особенно когда трудно. Говорят же иногда человек понимает ценность только тогда когда теряет, мен де соны сездым, сен мен ушын каншалыкты манызды екенынды кеш болсада уктым.
 
-Я не горю желанием возвращать прошлое таким где было много ссор, ошибок и недопонимания. Я очень горю желанием вернуть только всё хорошое из прошлого и построить вместе чтото искреннее, настоящее, то где мы будем очень счастливы. Я обещаю  быть честным, уважать тебя, проявлять свою любовь так как ты хотела, слышать тебя и быть рядом всегда не только когда легко но и тогда когда тебе трудно. Мен саган коп адемы создер айтып емес, действиялармен жане поступоктармен барын корсеткым келеды. Хочу расти, становиться лучше не ради чужого мнения, а потомучто рядом с тобой я хочу быть тем которым можно гордиться. Я очень хочу с тобой до конца до кольца дойти❤️❤️❤️
+Я не горю желанием возвращать прошлое таким где было много ссор, ошибок и недопонимания. Я очень горю желанием вернуть только всё хорошое из прошлого и построить вместе чтото искреннее, настоящее, то где мы будем очень счастливы. Я обещаю быть честным, уважать тебя, проявлять свою любовь так как ты хотела, слышать тебя и быть рядом всегда не только когда легко но и тогда когда тебе трудно. Мен саган коп адемы создер айтып емес, действиялармен жане поступоктармен барын корсеткым келеды. Хочу расти, становиться лучше не ради чужого мнения, а потомучто рядом с тобой я хочу быть тем которым можно гордиться. Я очень хочу с тобой до конца до кольца дойти❤️❤️❤️
         </div>
+
     </div>
 
     <div class="footer">
-         ❤️
+        made with love ❤️
     </div>
 
 </div>
