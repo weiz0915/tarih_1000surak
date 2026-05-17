@@ -1,284 +1,246 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Жаным, с нашей годовщиной 💖</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Красивый шрифт -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Для Жанёки ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:
+    linear-gradient(135deg,#ffdde1 0%,#ee9ca7 100%);
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+    position:relative;
+}
+
+/* animated background */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:200%;
+    height:200%;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,0.25),transparent 25%),
+    radial-gradient(circle at 80% 30%,rgba(255,255,255,0.15),transparent 25%),
+    radial-gradient(circle at 50% 80%,rgba(255,255,255,0.2),transparent 25%);
+    animation:bgMove 20s linear infinite;
+    z-index:-2;
+}
+
+@keyframes bgMove{
+    0%{
+        transform:translate(0,0) rotate(0deg);
+    }
+    100%{
+        transform:translate(-10%,-10%) rotate(360deg);
+    }
+}
+
+/* floating hearts */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.hearts span{
+    position:absolute;
+    display:block;
+    color:rgba(255,255,255,0.3);
+    animation:float 15s linear infinite;
+    bottom:-150px;
+    font-size:20px;
+}
+
+.hearts span:nth-child(1){
+    left:10%;
+    animation-duration:12s;
+    font-size:22px;
+}
+.hearts span:nth-child(2){
+    left:25%;
+    animation-duration:17s;
+}
+.hearts span:nth-child(3){
+    left:40%;
+    animation-duration:14s;
+    font-size:28px;
+}
+.hearts span:nth-child(4){
+    left:55%;
+    animation-duration:20s;
+}
+.hearts span:nth-child(5){
+    left:70%;
+    animation-duration:16s;
+    font-size:26px;
+}
+.hearts span:nth-child(6){
+    left:85%;
+    animation-duration:13s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.container{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px 80px;
+}
+
+.title{
+    text-align:center;
+    margin-top:40px;
+    margin-bottom:40px;
+    animation:fadeIn 2s ease;
+}
+
+.title h1{
+    font-family:'Great Vibes',cursive;
+    font-size:70px;
+    font-weight:400;
+    text-shadow:0 0 20px rgba(255,255,255,0.4);
+}
+
+.title p{
+    margin-top:10px;
+    font-size:18px;
+    opacity:0.9;
+}
+
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:30px;
+    padding:35px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.15);
+    animation:slideUp 1.5s ease;
+}
+
+.text{
+    font-size:18px;
+    line-height:2;
+    white-space:pre-line;
+    font-weight:400;
+    color:#fff;
+}
+
+.footer{
+    text-align:center;
+    margin-top:35px;
+    font-size:15px;
+    opacity:0.8;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* iphone optimization */
+
+@media(max-width:768px){
+
+    .title h1{
+        font-size:52px;
     }
 
-    body {
-      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at top left, #ffe8f2, #ffd0e7, #f9b6ff, #fdd8c2);
-      color: #2b1b2f;
-      padding: 20px;
-      overflow: hidden;
+    .card{
+        padding:25px;
+        border-radius:24px;
     }
 
-    .container {
-      position: relative;
-      max-width: 480px;
-      width: 100%;
-      z-index: 2;
+    .text{
+        font-size:16px;
+        line-height:1.9;
     }
+}
 
-    .card {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 24px;
-      padding: 28px 24px 24px;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      animation: fadeInUp 0.9s ease-out;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 700;
-      color: #ff4f84;
-      background: rgba(255, 79, 132, 0.08);
-      padding: 6px 12px;
-      border-radius: 999px;
-      margin-bottom: 10px;
-    }
-
-    .tag span {
-      font-size: 16px;
-    }
-
-    h1 {
-      font-size: 26px;
-      margin-bottom: 4px;
-      color: #35152e;
-    }
-
-    h2 {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #ff4f84;
-      margin-bottom: 16px;
-    }
-
-    .text-block {
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 14px;
-      white-space: pre-line;
-    }
-
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, #ffd1e3, transparent);
-      margin: 12px 0 16px;
-    }
-
-    .details {
-      font-size: 14px;
-      line-height: 1.8;
-      margin-bottom: 12px;
-    }
-
-    .details-row {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-    }
-
-    .details-emoji {
-      width: 22px;
-      flex-shrink: 0;
-      text-align: center;
-    }
-
-    .details-text b {
-      font-weight: 700;
-    }
-
-    .extra-text {
-      font-size: 14px;
-      line-height: 1.8;
-      margin: 4px 0 14px;
-    }
-
-    .signature {
-      font-size: 15px;
-      line-height: 1.7;
-      font-weight: 600;
-    }
-
-    .signature span {
-      color: #ff4f84;
-    }
-
-    .footer-note {
-      margin-top: 10px;
-      font-size: 11px;
-      text-align: center;
-      opacity: 0.7;
-    }
-
-    .footer-note span {
-      font-size: 13px;
-    }
-
-    /* Анимированные сердечки */
-    .hearts {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .heart {
-      position: absolute;
-      font-size: 18px;
-      opacity: 0.28;
-      animation: floatUp linear infinite;
-    }
-
-    .heart:nth-child(1) { left: 8%;  animation-duration: 11s; animation-delay: 0s;  }
-    .heart:nth-child(2) { left: 20%; animation-duration: 13s; animation-delay: 1s;  }
-    .heart:nth-child(3) { left: 35%; animation-duration: 10s; animation-delay: 2s;  }
-    .heart:nth-child(4) { left: 52%; animation-duration: 14s; animation-delay: 0.5s;}
-    .heart:nth-child(5) { left: 67%; animation-duration: 12s; animation-delay: 1.6s;}
-    .heart:nth-child(6) { left: 82%; animation-duration: 15s; animation-delay: 3s;  }
-
-    @keyframes floatUp {
-      0% {
-        transform: translateY(110vh) scale(0.9);
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.2);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Адаптивность */
-    @media (min-width: 600px) {
-      .card {
-        padding: 32px 32px 26px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      .text-block {
-        font-size: 16px;
-      }
-
-      .extra-text {
-        font-size: 15px;
-      }
-    }
-  </style>
+</style>
 </head>
 <body>
-  <div class="hearts">
-    <div class="heart">💖</div>
-    <div class="heart">💗</div>
-    <div class="heart">💘</div>
-    <div class="heart">💞</div>
-    <div class="heart">💓</div>
-    <div class="heart">💕</div>
-  </div>
 
-  <div class="container">
-    <div class="card">
-      <div class="tag">
-        <span>💍</span>
-        1 год вместе
-      </div>
+<div class="hearts">
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+</div>
 
-      <h1>Жаным 🌸</h1>
-      <h2>Приглашение на свидание</h2>
+<div class="container">
 
-      <p class="text-block">
-Сегодня особенный день — ровно год, как мы вместе ❤️  
-В честь нашей годовщины хочу отпраздновать его по-особенному — только вдвоём 💫
-      </p>
-
-      <div class="divider"></div>
-
-      <div class="details">
-        <div class="details-row">
-          <div class="details-emoji">💐</div>
-          <div class="details-text">
-            Приглашаю тебя на свидание в честь нашего года вместе.
-          </div>
-        </div>
-
-        <div class="details-row">
-          <div class="details-emoji">📍</div>
-          <div class="details-text">
-            <b>Место встречи:</b> секретное (такси отвезёт).
-          </div>
-        </div>
-
-        <div class="details-row">
-          <div class="details-emoji">👗</div>
-          <div class="details-text">
-            <b>Дресс-код:</b> любая одежда, в любом образе ты у меня самая шикарная и красивая 😘😘❤️❤️
-          </div>
-        </div>
-
-        <div class="details-row">
-          <div class="details-emoji">🕒</div>
-          <div class="details-text">
-            <b>Время:</b> 15:30
-          </div>
-        </div>
-
-        <div class="details-row">
-          <div class="details-emoji">📅</div>
-          <div class="details-text">
-            <b>Дата:</b> 16.11.2025
-          </div>
-        </div>
-      </div>
-
-      <p class="extra-text">
-        Спасибо тебе за этот год — за твой смех, поддержку и все моменты, когда ты была рядом.  
-        С каждым днём я люблю тебя всё сильнее, жаным, и мечтаю, чтобы впереди у нас были ещё сотни таких дат 🫶
-      </p>
-
-      <p class="signature">
-        Приходи, <span>жаным 🌸</span><br />
-        Пусть этот вечер станет началом ещё одного, ещё более красивого года наших отношений ❤️
-      </p>
-
-      <div class="footer-note">
-        Сделано с любовью <span>💌</span>
-      </div>
+    <div class="title">
+        <h1>Жанёка ❤️</h1>
+        <p>Только самые искренние слова</p>
     </div>
-  </div>
+
+    <div class="card">
+        <div class="text">
+Жанёка, саган айткым келген туралы узак ойланып кеш болсада коп нарсены угып барынша шынайы айткым келеды. Сен менын омырыме жай гана кырып келген адам емес, журегымдегы оте ерекше орын алган жансын. Арамыздагы болганын бары бос нарсе емес керысынше оте манызды болды. Негызынде мен ойламадым быреуге басым катты кетеды деп, брак осы 10сыныпта сен мены вальска билеуге шакырган саттен бастап бары озгерды. Кейын сен мены унататынынды былген кезымде, ышымде ерекше быр нарсе оянгандай болды. Сенын адемы даусыннан, ерке кулкыннен,оте адемы сулулыгыннан мен озым де байкамай саган карай жакындай бердым. Бырге журген кездеремызде мен озымды баскаша сезынгенмын, ерекше жане шынайы сезындым. Карапайым кундердын озы сен барда ерекше кундер болатын. Мындаган кыздар арасынан мен сены кайтадан тандар едым.
+
+Блем озым не был идеальным, коп кателестым, кейде артык кетып журдым, талай нарсены дурыс емес ойлаганмын, кейбыр кезде ундемей калып айтатынымды айта алмадым. Может ты щас злишься на меня или думаешь что я вру тебе, это совсем не так и знай мен жасаган кате арекеттерыме оправдание айтып жатканым емес барын оз басыма мойындаймын, брак быр нарсены шын айткым келеды, мен ешкашан сены адейы ренжытып жане сезымдерынмен ойнагым келмеды. Менын саган чувстваларым уакытша немесе отырык болган емес ардайым шынайы болган. Казр мен саган адейы кышкене болсын ренжытып немесе жамандык жасагым келмейды. Сены кайтаргым келгены ойын алде качелялар ушын емес. Я изменился во многом и коп нарсе уктым. Осы отношения тек адемы создер жане бос уаде берып журу ушын емес ал керысынше честность, забота, уважение и умение быть рядом особенно когда трудно. Говорят же иногда человек понимает ценность только тогда когда теряет, мен де соны сездым, сен мен ушын каншалыкты манызды екенынды кеш болсада уктым.
+
+Я не горю желанием возвращать прошлое таким где было много ссор, ошибок и недопонимания. Я очень горю желанием вернуть только всё хорошое из прошлого и построить вместе чтото искреннее, настоящее, то где мы будем очень счастливы. Я обещаю  быть честным, уважать тебя, проявлять свою любовь так как ты хотела, слышать тебя и быть рядом всегда не только когда легко но и тогда когда тебе трудно. Мен саган коп адемы создер айтып емес, действиялармен жане поступоктармен барын корсеткым келеды. Хочу расти, становиться лучше не ради чужого мнения, а потомучто рядом с тобой я хочу быть тем которым можно гордиться.
+        </div>
+    </div>
+
+    <div class="footer">
+         ❤️
+    </div>
+
+</div>
+
 </body>
 </html>
