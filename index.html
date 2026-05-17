@@ -2,11 +2,11 @@
 <html lang="ru">
 <head>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#f7b7c8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7b8c8">
 
-<title>Тарих слив</title>
+<title>Тарих сливы</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,73 +21,90 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
+
     font-family:'Montserrat',sans-serif;
-    overflow-x:hidden;
+
     min-height:100vh;
+
+    overflow-x:hidden;
+
     position:relative;
+
+    color:#5c3140;
+
+    /* нежный розовый фон */
 
     background:
     linear-gradient(
         180deg,
-        #ffd6e2 0%,
-        #ffc2d4 35%,
-        #ffb1ca 70%,
-        #f9a8be 100%
+        #ffdce6 0%,
+        #ffd1df 25%,
+        #ffc5d6 50%,
+        #ffbfd2 75%,
+        #ffc9d8 100%
     );
-
-    color:#fff;
 }
 
-/* soft glowing background */
+/* мягкие светлые разводы */
 
 body::before{
+
     content:'';
 
     position:fixed;
+
     inset:0;
 
     background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.55), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(255,182,193,0.35), transparent 35%),
-    radial-gradient(circle at center, rgba(255,255,255,0.18), transparent 45%);
+    radial-gradient(circle at top left,
+    rgba(255,255,255,0.55),
+    transparent 30%),
 
-    animation:moveGlow 12s linear infinite;
+    radial-gradient(circle at bottom right,
+    rgba(255,255,255,0.22),
+    transparent 35%),
+
+    radial-gradient(circle at center,
+    rgba(255,255,255,0.14),
+    transparent 45%);
+
+    animation:glow 10s ease-in-out infinite alternate;
 
     z-index:-2;
 }
 
-@keyframes moveGlow{
-    0%{
-        transform:translate(0,0);
+@keyframes glow{
+
+    from{
+        transform:translateY(0px);
     }
 
-    50%{
-        transform:translate(-2%,-2%);
-    }
-
-    100%{
-        transform:translate(0,0);
+    to{
+        transform:translateY(-10px);
     }
 }
 
-/* floating hearts */
+/* сердечки */
 
 .hearts{
+
     position:fixed;
+
     inset:0;
+
     overflow:hidden;
+
     pointer-events:none;
+
     z-index:-1;
 }
 
 .hearts span{
+
     position:absolute;
-    bottom:-120px;
+
+    bottom:-100px;
 
     color:rgba(255,255,255,0.45);
 
@@ -95,9 +112,9 @@ body::before{
 }
 
 .hearts span:nth-child(1){
-    left:8%;
+    left:10%;
     font-size:20px;
-    animation-duration:12s;
+    animation-duration:13s;
 }
 
 .hearts span:nth-child(2){
@@ -113,19 +130,19 @@ body::before{
 }
 
 .hearts span:nth-child(4){
-    left:58%;
-    font-size:18px;
+    left:60%;
+    font-size:19px;
     animation-duration:20s;
 }
 
 .hearts span:nth-child(5){
-    left:75%;
+    left:78%;
     font-size:22px;
-    animation-duration:13s;
+    animation-duration:14s;
 }
 
 .hearts span:nth-child(6){
-    left:90%;
+    left:92%;
     font-size:17px;
     animation-duration:16s;
 }
@@ -147,9 +164,13 @@ body::before{
     }
 }
 
+/* контейнер */
+
 .container{
+
     width:100%;
-    max-width:930px;
+
+    max-width:920px;
 
     margin:auto;
 
@@ -159,14 +180,17 @@ body::before{
     70px;
 }
 
-/* title */
+/* заголовок */
 
 .title{
-    text-align:center;
-    margin-top:20px;
-    margin-bottom:28px;
 
-    animation:fadeIn 1.4s ease;
+    text-align:center;
+
+    margin-top:18px;
+
+    margin-bottom:30px;
+
+    animation:fadeIn 1.3s ease;
 }
 
 .title h1{
@@ -177,14 +201,14 @@ body::before{
 
     font-weight:400;
 
-    color:#fff;
+    color:#ffffff;
 
     text-shadow:
-    0 0 10px rgba(255,255,255,0.5),
-    0 0 30px rgba(255,105,180,0.35);
+    0 0 10px rgba(255,255,255,0.7),
+    0 0 25px rgba(255,182,193,0.8);
 }
 
-/* luxury card */
+/* карточка */
 
 .card{
 
@@ -196,27 +220,28 @@ body::before{
 
     overflow:hidden;
 
-    /* IMPORTANT FOR SAFARI */
+    /* САФАРИ FIX */
 
-    background:rgba(255, 240, 245, 0.78);
+    background:rgba(255, 244, 247, 0.72);
 
     border:1px solid rgba(255,255,255,0.45);
 
-    -webkit-backdrop-filter:blur(12px);
-    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
 
     box-shadow:
-    0 10px 40px rgba(255,105,180,0.18),
-    0 4px 25px rgba(0,0,0,0.08);
+    0 8px 30px rgba(255,105,180,0.15),
+    0 4px 18px rgba(0,0,0,0.05);
 }
 
-/* glossy layer */
+/* glossy эффект */
 
 .card::before{
 
     content:'';
 
     position:absolute;
+
     inset:0;
 
     border-radius:34px;
@@ -224,21 +249,22 @@ body::before{
     background:
     linear-gradient(
         135deg,
-        rgba(255,255,255,0.35),
+        rgba(255,255,255,0.28),
         transparent 35%
     );
 
     pointer-events:none;
 }
 
-/* text */
+/* текст */
 
 .text{
 
     position:relative;
+
     z-index:2;
 
-    color:#5f3140;
+    color:#6b3b4b;
 
     font-size:18px;
 
@@ -247,8 +273,6 @@ body::before{
     font-weight:500;
 
     white-space:pre-line;
-
-    text-shadow:none;
 }
 
 /* footer */
@@ -257,7 +281,7 @@ body::before{
 
     text-align:center;
 
-    margin-top:22px;
+    margin-top:24px;
 
     color:rgba(255,255,255,0.9);
 
@@ -266,7 +290,7 @@ body::before{
     letter-spacing:1px;
 }
 
-/* animations */
+/* анимации */
 
 @keyframes fadeIn{
 
