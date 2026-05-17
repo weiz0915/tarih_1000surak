@@ -4,9 +4,9 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f7b8c8">
+<meta name="theme-color" content="#d98aa5">
 
-<title>Тарих сливы</title>
+<title>11.11 ❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,22 +31,21 @@ body{
 
     position:relative;
 
-    color:#5c3140;
+    color:#5f3445;
 
-    /* нежный розовый фон */
+    /* ТЕМНЕЕ И ДОРОЖЕ РОЗОВЫЙ ФОН */
 
     background:
     linear-gradient(
         180deg,
-        #ffdce6 0%,
-        #ffd1df 25%,
-        #ffc5d6 50%,
-        #ffbfd2 75%,
-        #ffc9d8 100%
+        #e9a8bc 0%,
+        #de92ab 30%,
+        #d7839f 60%,
+        #cf7895 100%
     );
 }
 
-/* мягкие светлые разводы */
+/* glow */
 
 body::before{
 
@@ -58,18 +57,18 @@ body::before{
 
     background:
     radial-gradient(circle at top left,
-    rgba(255,255,255,0.55),
+    rgba(255,255,255,0.30),
     transparent 30%),
 
     radial-gradient(circle at bottom right,
-    rgba(255,255,255,0.22),
+    rgba(255,255,255,0.12),
     transparent 35%),
 
     radial-gradient(circle at center,
-    rgba(255,255,255,0.14),
+    rgba(255,255,255,0.08),
     transparent 45%);
 
-    animation:glow 10s ease-in-out infinite alternate;
+    animation:glow 9s ease-in-out infinite alternate;
 
     z-index:-2;
 }
@@ -85,7 +84,7 @@ body::before{
     }
 }
 
-/* сердечки */
+/* floating hearts */
 
 .hearts{
 
@@ -104,17 +103,17 @@ body::before{
 
     position:absolute;
 
-    bottom:-100px;
+    bottom:-120px;
 
-    color:rgba(255,255,255,0.45);
+    color:rgba(255,255,255,0.22);
 
-    animation:float 15s linear infinite;
+    animation:float 16s linear infinite;
 }
 
 .hearts span:nth-child(1){
-    left:10%;
+    left:8%;
     font-size:20px;
-    animation-duration:13s;
+    animation-duration:12s;
 }
 
 .hearts span:nth-child(2){
@@ -131,7 +130,7 @@ body::before{
 
 .hearts span:nth-child(4){
     left:60%;
-    font-size:19px;
+    font-size:18px;
     animation-duration:20s;
 }
 
@@ -164,7 +163,7 @@ body::before{
     }
 }
 
-/* контейнер */
+/* container */
 
 .container{
 
@@ -180,7 +179,7 @@ body::before{
     70px;
 }
 
-/* заголовок */
+/* title */
 
 .title{
 
@@ -190,7 +189,7 @@ body::before{
 
     margin-bottom:30px;
 
-    animation:fadeIn 1.3s ease;
+    animation:fadeIn 1.2s ease;
 }
 
 .title h1{
@@ -201,14 +200,14 @@ body::before{
 
     font-weight:400;
 
-    color:#ffffff;
+    color:#fff;
 
     text-shadow:
-    0 0 10px rgba(255,255,255,0.7),
-    0 0 25px rgba(255,182,193,0.8);
+    0 0 12px rgba(255,255,255,0.45),
+    0 0 24px rgba(255,192,203,0.45);
 }
 
-/* карточка */
+/* luxury card */
 
 .card{
 
@@ -220,21 +219,21 @@ body::before{
 
     overflow:hidden;
 
-    /* САФАРИ FIX */
+    /* SAFARI FIX */
 
-    background:rgba(255, 244, 247, 0.72);
+    background:rgba(255, 239, 244, 0.72);
 
-    border:1px solid rgba(255,255,255,0.45);
+    border:1px solid rgba(255,255,255,0.28);
 
     -webkit-backdrop-filter:blur(10px);
     backdrop-filter:blur(10px);
 
     box-shadow:
-    0 8px 30px rgba(255,105,180,0.15),
+    0 8px 30px rgba(137,55,87,0.16),
     0 4px 18px rgba(0,0,0,0.05);
 }
 
-/* glossy эффект */
+/* glossy effect */
 
 .card::before{
 
@@ -249,14 +248,14 @@ body::before{
     background:
     linear-gradient(
         135deg,
-        rgba(255,255,255,0.28),
+        rgba(255,255,255,0.20),
         transparent 35%
     );
 
     pointer-events:none;
 }
 
-/* текст */
+/* text */
 
 .text{
 
@@ -264,7 +263,7 @@ body::before{
 
     z-index:2;
 
-    color:#6b3b4b;
+    color:#603545;
 
     font-size:18px;
 
@@ -283,14 +282,14 @@ body::before{
 
     margin-top:24px;
 
-    color:rgba(255,255,255,0.9);
+    color:rgba(255,255,255,0.88);
 
     font-size:14px;
 
     letter-spacing:1px;
 }
 
-/* анимации */
+/* animation */
 
 @keyframes fadeIn{
 
@@ -361,7 +360,7 @@ body::before{
     </div>
 
     <div class="footer">
-        D❤️
+        made with love ❤️
     </div>
 
 </div>
