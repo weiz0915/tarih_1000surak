@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#111118">
+<meta name="theme-color" content="#f7b7c8">
 
-<title>тарих слив</title>
+<title>Тарих слив</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
 
@@ -26,42 +27,51 @@ html{
 
 body{
     font-family:'Montserrat',sans-serif;
-    min-height:100vh;
     overflow-x:hidden;
+    min-height:100vh;
     position:relative;
-    color:#fff;
 
     background:
-    radial-gradient(circle at top left,#ff4f87 0%,transparent 25%),
-    radial-gradient(circle at bottom right,#ff8fb1 0%,transparent 25%),
-    linear-gradient(135deg,#0f0f14 0%,#191923 40%,#111118 100%);
+    linear-gradient(
+        180deg,
+        #ffd6e2 0%,
+        #ffc2d4 35%,
+        #ffb1ca 70%,
+        #f9a8be 100%
+    );
 
-    background-attachment:fixed;
+    color:#fff;
 }
 
-/* animated glow */
+/* soft glowing background */
 
 body::before{
     content:'';
+
     position:fixed;
     inset:0;
 
     background:
-    radial-gradient(circle at 20% 20%,rgba(255,105,180,0.18),transparent 30%),
-    radial-gradient(circle at 80% 30%,rgba(255,255,255,0.06),transparent 30%),
-    radial-gradient(circle at 50% 80%,rgba(255,20,147,0.12),transparent 35%);
+    radial-gradient(circle at top left, rgba(255,255,255,0.55), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255,182,193,0.35), transparent 35%),
+    radial-gradient(circle at center, rgba(255,255,255,0.18), transparent 45%);
 
-    animation:bgMove 18s linear infinite;
+    animation:moveGlow 12s linear infinite;
 
     z-index:-2;
 }
 
-@keyframes bgMove{
+@keyframes moveGlow{
     0%{
-        transform:translate(0,0) rotate(0deg);
+        transform:translate(0,0);
     }
+
+    50%{
+        transform:translate(-2%,-2%);
+    }
+
     100%{
-        transform:translate(-5%,-5%) rotate(360deg);
+        transform:translate(0,0);
     }
 }
 
@@ -69,53 +79,59 @@ body::before{
 
 .hearts{
     position:fixed;
-    width:100%;
-    height:100%;
+    inset:0;
     overflow:hidden;
-    z-index:-1;
     pointer-events:none;
+    z-index:-1;
 }
 
 .hearts span{
     position:absolute;
-    display:block;
-    color:rgba(255,255,255,0.10);
-    bottom:-100px;
-    animation:float 16s linear infinite;
-    font-size:22px;
+    bottom:-120px;
+
+    color:rgba(255,255,255,0.45);
+
+    animation:float 15s linear infinite;
 }
 
 .hearts span:nth-child(1){
-    left:10%;
+    left:8%;
+    font-size:20px;
     animation-duration:12s;
 }
 
 .hearts span:nth-child(2){
-    left:25%;
+    left:24%;
+    font-size:16px;
     animation-duration:18s;
 }
 
 .hearts span:nth-child(3){
-    left:40%;
-    animation-duration:14s;
+    left:42%;
+    font-size:24px;
+    animation-duration:15s;
 }
 
 .hearts span:nth-child(4){
     left:58%;
+    font-size:18px;
     animation-duration:20s;
 }
 
 .hearts span:nth-child(5){
     left:75%;
-    animation-duration:15s;
+    font-size:22px;
+    animation-duration:13s;
 }
 
 .hearts span:nth-child(6){
     left:90%;
-    animation-duration:13s;
+    font-size:17px;
+    animation-duration:16s;
 }
 
 @keyframes float{
+
     0%{
         transform:translateY(0) rotate(0deg);
         opacity:0;
@@ -133,73 +149,83 @@ body::before{
 
 .container{
     width:100%;
-    max-width:920px;
+    max-width:930px;
+
     margin:auto;
-    padding:40px 20px 80px;
+
+    padding:
+    35px
+    18px
+    70px;
 }
 
 /* title */
 
 .title{
     text-align:center;
-    margin-top:30px;
-    margin-bottom:35px;
+    margin-top:20px;
+    margin-bottom:28px;
 
-    animation:fadeIn 1.5s ease;
+    animation:fadeIn 1.4s ease;
 }
 
 .title h1{
+
     font-family:'Great Vibes',cursive;
-    font-size:84px;
+
+    font-size:88px;
+
     font-weight:400;
 
     color:#fff;
 
     text-shadow:
-    0 0 10px rgba(255,255,255,0.3),
-    0 0 30px rgba(255,105,180,0.5);
+    0 0 10px rgba(255,255,255,0.5),
+    0 0 30px rgba(255,105,180,0.35);
 }
 
-/* premium card */
+/* luxury card */
 
 .card{
+
     position:relative;
 
-    background:rgba(20,20,28,0.72);
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    border-radius:32px;
+    border-radius:34px;
 
     padding:38px;
 
+    overflow:hidden;
+
+    /* IMPORTANT FOR SAFARI */
+
+    background:rgba(255, 240, 245, 0.78);
+
+    border:1px solid rgba(255,255,255,0.45);
+
+    -webkit-backdrop-filter:blur(12px);
+    backdrop-filter:blur(12px);
+
     box-shadow:
-    0 10px 40px rgba(0,0,0,0.45),
-    0 0 30px rgba(255,105,180,0.08);
-
-    animation:slideUp 1.3s ease;
-
-    /* safari support */
-
-    -webkit-backdrop-filter:blur(20px);
-    backdrop-filter:blur(20px);
+    0 10px 40px rgba(255,105,180,0.18),
+    0 4px 25px rgba(0,0,0,0.08);
 }
 
-/* glossy effect */
+/* glossy layer */
 
 .card::before{
+
     content:'';
 
     position:absolute;
     inset:0;
 
-    border-radius:32px;
+    border-radius:34px;
 
     background:
     linear-gradient(
         135deg,
-        rgba(255,255,255,0.10),
-        transparent 30%
+        rgba(255,255,255,0.35),
+        transparent 35%
     );
 
     pointer-events:none;
@@ -208,50 +234,45 @@ body::before{
 /* text */
 
 .text{
+
     position:relative;
     z-index:2;
 
-    color:#f5f5f7;
+    color:#5f3140;
 
     font-size:18px;
+
     line-height:2.05;
 
-    font-weight:400;
+    font-weight:500;
 
     white-space:pre-line;
 
-    text-shadow:0 0 1px rgba(0,0,0,0.3);
+    text-shadow:none;
 }
 
 /* footer */
 
 .footer{
-    text-align:center;
-    margin-top:24px;
 
-    color:rgba(255,255,255,0.65);
+    text-align:center;
+
+    margin-top:22px;
+
+    color:rgba(255,255,255,0.9);
 
     font-size:14px;
+
+    letter-spacing:1px;
 }
 
 /* animations */
 
 @keyframes fadeIn{
+
     from{
         opacity:0;
         transform:translateY(-20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes slideUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
     }
 
     to{
@@ -265,12 +286,7 @@ body::before{
 @media(max-width:768px){
 
     .container{
-        padding:24px 16px 60px;
-    }
-
-    .title{
-        margin-top:10px;
-        margin-bottom:28px;
+        padding:20px 14px 55px;
     }
 
     .title h1{
@@ -279,11 +295,11 @@ body::before{
 
     .card{
         padding:24px;
-        border-radius:26px;
+        border-radius:28px;
     }
 
     .text{
-        font-size:15.8px;
+        font-size:15.5px;
         line-height:1.95;
     }
 }
